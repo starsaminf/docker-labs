@@ -1,6 +1,6 @@
 ## Docker for beginners
 
-This tutorial consists of the following sections:
+Este tutorial tiene las siguientes secciones:
 
 * [Setup](chapters/setup.md)
 * [1.0 Running your first container](chapters/alpine.md)
