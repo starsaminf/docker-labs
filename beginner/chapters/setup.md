@@ -5,9 +5,7 @@ No se necestan habilidades especificas para este tutorial, un basico conocimient
 
 ### Configuraciones del Equipo
 
-Instalar todas las herramientas en la computadora puede ser una tarea desalentadora, pero instalar Docker e iniciarlo se ha convirtio una tarea muy facil.
-
-Getting all the tooling setup on your computer can be a daunting task, but getting Docker up and running on your favorite OS has become very easy.
+Instalar todas las herramientas en tu computadora puede ser una tarea desalentadora, pero instalar Docker en tu sistema operativo es una tarea muy facil.
 
 La *guia de inicio* de Docker tiene detalladas instrucciones para instalar Docker en [Mac](https://docs.docker.com/docker-for-mac/), [Linux](https://docs.docker.com/engine/installation/linux/) y [Windows](https://docs.docker.com/docker-for-windows/).
 
