@@ -1,14 +1,15 @@
-## 1.0 Running your first container
-Now that you have everything setup, it's time to get our hands dirty. In this section, you are going to run an [Alpine Linux](http://www.alpinelinux.org/) container (a lightweight linux distribution) on your system and get a taste of the `docker run` command.
+## 1.0 Levantando nuestro primer contenedor
 
-To get started, let's run the following in our terminal:
+Ahora que tienes todo preparado, es hora de ensuciarnos las manos. En esta seccion, vas a ejecutarun [Alpine Linux](http://www.alpinelinux.org/) un contenedor (una distribucion ligera de linux) en tu sistema y pruebar el comando `docker run`.
+
+Para empezar, vamos a correr la siguiente linea en la terminal:
 ```
 $ docker pull alpine
 ```
 
-> **Note:** Depending on how you've installed docker on your system, you might see a `permission denied` error after running the above command. Try the commands from the Getting Started tutorial to [verify your installation](https://docs.docker.com/engine/getstarted/step_one/#/step-3-verify-your-installation). If you're on Linux, you may need to prefix your `docker` commands with `sudo`. Alternatively you can [create a docker group](https://docs.docker.com/engine/installation/linux/ubuntulinux/#/create-a-docker-group) to get rid of this issue.
+> **Nota:** Dependiendo de como instalaste Docker en tu sistema, puede que veas el siguiente mensaje de error `permission denied` despues de correr el comando anterior. Pruebe los comandos del tutorial [verify your installation](https://docs.docker.com/engine/getstarted/step_one/#/step-3-verify-your-installation). Si estas usando Linux, puede que tengas que poner el prefijo `sudo` antes de `docker`. Una alternativa es [crear el grupo docker](https://docs.docker.com/engine/install/linux-postinstall/) para no usar `sudo`.
 
-The `pull` command fetches the alpine **image** from the **Docker registry** and saves it in our system. You can use the `docker images` command to see a list of all images on your system.
+El comando `pull` busca la **image** alpine en **Docker registry** y lo descarga a en tu sistema. Puedes usar el comando `docker images` para ver una lista de todas las imagenes que descargaste en tu sistema.
 ```
 $ docker images
 REPOSITORY              TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
@@ -16,8 +17,8 @@ alpine                 latest              c51f86c28340        4 weeks ago      
 hello-world             latest              690ed74de00f        5 months ago        960 B
 ```
 
-### 1.1 Docker Run
-Great! Let's now run a Docker **container** based on this image. To do that you are going to use the `docker run` command.
+### 1.1 Docker Run  
+Super! Ahora vamos a correr un **container** basado en la imagen de **alpine**. Para hacer eso vas a usar el siguiente comando `docker run`.
 
 ```
 $ docker run alpine ls -l
@@ -30,15 +31,15 @@ drwxr-xr-x    5 root     root          4096 Mar  2 16:20 lib
 ......
 ......
 ```
-What happened? Behind the scenes, a lot of stuff happened. When you call `run`,
-1. The Docker client contacts the Docker daemon
-2. The Docker daemon checks local store if the image (alpine in this case) is available locally, and if not, downloads it from Docker Store. (Since we have issued `docker pull alpine` before, the download step is not necessary)
-3. The Docker daemon creates the container and then runs a command in that container.
-4. The Docker daemon streams the output of the command to the Docker client
+Que paso? Behind the scenes, a lot of stuff happened. When you call `run`,
+1. Docker cliente llama al Docker daemon.
+2. Docker daemon comprueba si la imagen (alpine en este caso) fue descargada localmente, si no fue descargada, descarga la imagen desde Docker Store.
+3. Docker daemon crea el cotenedor y ejecuta el comando.
+4. Docker daemon envia la salida del comando al Docker client
 
-When you run `docker run alpine`, you provided a command (`ls -l`), so Docker started the command specified and you saw the listing.
+Cuando ejecutaste `docker run alpine`, usted proporciono una orden (`ls -l`),  Docker ejecuto el comando y vio la lista.
 
-Let's try something more exciting.
+Intentemos algo mas emocionante.
 
 ```
 $ docker run alpine echo "hello from alpine"
